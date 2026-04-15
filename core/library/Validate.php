@@ -8,4 +8,9 @@ class Validate
     {
         return true;
     }
+
+    public function email()
+    {
+        return true;
+    }
 }

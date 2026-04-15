@@ -65,3 +65,8 @@ Feito
 ---------
 
 Comando padrão para rodar testes: unit tests --color --testdox
+
+
+CONFIGURAR XML
+
+unit --generate-configuration
