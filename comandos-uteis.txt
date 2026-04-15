@@ -1,0 +1,67 @@
+INSTALAÇÃO DO PHP UNIT
+
+sudo apt install php-cli \
+                 php-json \
+                 php-mbstring \
+                 php-xml \
+                 php-pcov \
+                 php-xdebug
+
+Se quiser manter o PHP na 8.5, ajustar o sufixo para 8.5 (php8.5-cli)
+
+Iniciar repositório
+
+composer init
+composer require phpunit/phpunit
+
+no composer-json em psr-4 deixar
+
+"app\\": "app/",
+"core\\": "core/"
+
+rodar composer dump-autoload
+
+renomeia a pasta SRC para app e criar pasta CORE e subpasta library
+criar pasta tests com subpastas app e core
+
+---------
+
+Executar teste = php vendor/bin/phpunit tests/core/library/AuthTest.php --color
+
+RODAR UM REPOSITÓRIO DO ZERO
+
+Instale os pré-requisitos
+PHP 8.4.1 ou superior
+Composer 2.x
+Extensões do PHP exigidas pelo PHPUnit: dom, json, libxml, mbstring, xml, xmlwriter
+Referências: composer.json, composer.lock:629, composer.lock:652
+Clone o repositório
+git clone URL_DO_REPO
+cd curso-phpunit
+Instale as dependências do projeto
+composer install
+Gere/autualize o autoload (se necessário)
+composer dump-autoload
+Rode os testes
+./vendor/bin/phpunit
+Se der erro de versão, valide:
+
+php -v
+composer -V
+
+ALIAS NO COMANDO UNIT
+
+nano ~/.bashrc
+
+Adicione no final:
+
+# Meus aliases personalizados
+alias unit='php vendor/bin/phpunit'
+
+Salvar e rodar: source ~/.bashrc
+
+Feito
+
+---------
+
+Comando padrão para rodar testes: unit tests --color --testdox
